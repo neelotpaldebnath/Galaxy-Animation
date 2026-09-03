@@ -130,6 +130,7 @@ scene.add(camera)
 
 // Controls
 const controls = new OrbitControls(camera, canvas)
+let autoRotate = true
 controls.enableDamping = true
 
 /**
@@ -153,10 +154,11 @@ const tick = () =>
     // Update controls
     controls.update()
 
-    camera.position.x = Math.cos(elapsedTime*0.05);
-    camera.position.z = Math.sin(elapsedTime*0.05);
-    camera.lookAt(0,0,0);
-
+   if (autoRotate) {
+    camera.position.x = Math.cos(elapsedTime * 0.05)
+    camera.position.z = Math.sin(elapsedTime * 0.05)
+    camera.lookAt(0, 0, 0)
+}
     // Render
     renderer.render(scene, camera)
 
@@ -173,4 +175,11 @@ resetViewButton.addEventListener('click', () => {
     camera.lookAt(0, 0, 0);
     controls.target.set(0, 0, 0);
     controls.update();
+});
+
+const autoRotateButton = document.getElementById('auto-rotate');
+
+autoRotateButton.addEventListener('click', () => {
+    autoRotate = !autoRotate;
+    autoRotateButton.textContent = `Auto Rotate: ${autoRotate ? 'On' : 'Off'}`;
 });
