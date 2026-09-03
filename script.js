@@ -164,4 +164,13 @@ const tick = () =>
     window.requestAnimationFrame(tick)
 }
 
-tick()
+tick();
+
+const resetViewButton = document.getElementById('reset-view');
+
+resetViewButton.addEventListener('click', () => {
+    camera.position.set(0, 0, 3);
+    camera.lookAt(0, 0, 0);
+    controls.target.set(0, 0, 0);
+    controls.update();
+});
