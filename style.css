@@ -73,3 +73,7 @@ body
     border-radius: 6px;
     transition: all 0.2s ease;
 }
+
+.galaxy-controls button:active {
+    transform: scale(0.97);
+}
