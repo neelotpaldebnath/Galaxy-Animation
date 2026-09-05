@@ -63,3 +63,17 @@ body
     font-size: 14px;
 }
 
+.galaxy-controls button:hover {
+    background: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+.galaxy-controls button {
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.galaxy-controls button:active {
+    transform: scale(0.97);
+}
