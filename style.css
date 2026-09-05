@@ -63,3 +63,8 @@ body
     font-size: 14px;
 }
 
+.galaxy-controls button:hover {
+    background: white;
+    color: black;
+    transform: scale(1.05);
+}
