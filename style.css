@@ -77,3 +77,8 @@ body
 .galaxy-controls button:active {
     transform: scale(0.97);
 }
+
+.galaxy-controls button {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
