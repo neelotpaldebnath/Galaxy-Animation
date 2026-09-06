@@ -67,6 +67,7 @@ body
     background: white;
     color: black;
     transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
 }
 
 .galaxy-controls button {
@@ -76,4 +77,14 @@ body
 
 .galaxy-controls button:active {
     transform: scale(0.97);
+}
+
+.galaxy-controls button {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.galaxy-controls button:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
 }
