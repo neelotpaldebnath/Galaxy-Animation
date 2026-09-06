@@ -82,3 +82,8 @@ body
     font-weight: bold;
     letter-spacing: 0.5px;
 }
+
+.galaxy-controls button:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+}
