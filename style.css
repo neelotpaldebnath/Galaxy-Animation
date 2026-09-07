@@ -56,11 +56,13 @@ body
 .galaxy-controls button {
     display: block;
     padding: 10px 16px;
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.6);
     background: rgba(0, 0, 0, 0.8);
     color: white;
     cursor: pointer;
     font-size: 14px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .galaxy-controls button:hover {
