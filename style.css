@@ -43,6 +43,7 @@ body
 }
 
 .galaxy-info p {
+    line-height: 1.6;
     font-size: 16px;
     opacity: 0.7;
 }
