@@ -49,6 +49,7 @@ body
 }
 
 .galaxy-controls {
+    margin-top: 14px;
     position: fixed;
     top: 120px;
     left: 40px;
