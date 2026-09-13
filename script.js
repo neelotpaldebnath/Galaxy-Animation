@@ -131,6 +131,7 @@ scene.add(camera)
 // Controls
 const controls = new OrbitControls(camera, canvas)
 let autoRotate = true
+let animationPaused = false
 controls.enableDamping = true
 
 /**
@@ -149,6 +150,8 @@ const clock = new THREE.Clock()
 
 const tick = () =>
 {
+    if (animationPaused) return
+
     const elapsedTime = clock.getElapsedTime()
 
     // Update controls
@@ -182,4 +185,18 @@ const autoRotateButton = document.getElementById('auto-rotate');
 autoRotateButton.addEventListener('click', () => {
     autoRotate = !autoRotate;
     autoRotateButton.textContent = `Auto Rotate: ${autoRotate ? 'On' : 'Off'}`;
+});
+
+const pauseAnimationButton = document.getElementById('pause-animation');
+
+pauseAnimationButton.addEventListener('click', () => {
+    animationPaused = !animationPaused;
+    pauseAnimationButton.textContent = animationPaused ? 'Resume Animation' : 'Pause Animation';
+
+    if (animationPaused) {
+        clock.stop();
+    } else {
+        clock.start();
+        tick();
+    }
 });
