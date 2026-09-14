@@ -132,6 +132,7 @@ scene.add(camera)
 const controls = new OrbitControls(camera, canvas)
 let autoRotate = true
 let animationPaused = false
+let animationSpeed = 1
 controls.enableDamping = true
 
 /**
@@ -158,8 +159,8 @@ const tick = () =>
     controls.update()
 
    if (autoRotate) {
-    camera.position.x = Math.cos(elapsedTime * 0.05)
-    camera.position.z = Math.sin(elapsedTime * 0.05)
+    camera.position.x = Math.cos(elapsedTime * 0.05 * animationSpeed)
+    camera.position.z = Math.sin(elapsedTime * 0.05 * animationSpeed)
     camera.lookAt(0, 0, 0)
 }
     // Render
@@ -199,4 +200,15 @@ pauseAnimationButton.addEventListener('click', () => {
         clock.start();
         tick();
     }
+});
+
+const animationSpeedButton = document.getElementById('animation-speed');
+
+const animationSpeeds = [0.5, 1, 2, 4];
+let animationSpeedIndex = 1;
+
+animationSpeedButton.addEventListener('click', () => {
+    animationSpeedIndex = (animationSpeedIndex + 1) % animationSpeeds.length;
+    animationSpeed = animationSpeeds[animationSpeedIndex];
+    animationSpeedButton.textContent = `Animation Speed: ${animationSpeed}x`;
 });
