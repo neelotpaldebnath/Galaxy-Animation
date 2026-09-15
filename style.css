@@ -98,3 +98,17 @@ body
     outline: 2px solid white;
     outline-offset: 3px;
 }
+
+.galaxy-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 18px 0;
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+.galaxy-stats span {
+    padding: 6px 10px;
+    border-radius: 6px;
+}
