@@ -89,7 +89,11 @@ material = new THREE.PointsMaterial({
 
 }
 generateGalaxy();
+const starCountElement = document.getElementById('star-count');
+const branchCountElement = document.getElementById('branch-count');
 
+starCountElement.textContent = `Stars: ${parameters.count.toLocaleString()}`;
+branchCountElement.textContent = `Branches: ${parameters.branches}`;
 /**
  * Test cube
  */
